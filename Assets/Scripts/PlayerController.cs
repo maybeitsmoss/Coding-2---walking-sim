@@ -1,12 +1,12 @@
-using System.Numerics;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks.Dataflow;
-using Microsoft.CSharp.RuntimeBinder;
+//using System.Numerics;
+//using System.Runtime.CompilerServices;
+//using System.Threading.Tasks.Dataflow;
+//using Microsoft.CSharp.RuntimeBinder;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 12;
+    public float moveSpeed = 6;
     public float gravity = 0.1f;
     public float groundCheckRadius = 0.15f;
     public float jumpForce = 15f;
@@ -58,14 +58,14 @@ public class PlayerController : MonoBehaviour
         controller.Move(velocity);
     }
 
-    private void Jump()
+    /*private void Jump()
     {
         rb = GetComponent<RigidBody>();
         Vector3 velocity = rb.velocity;
 
 
         velocity = Vector3(velocity.X, velocity.Y, jumpForce);
-    }
+    }*/
 
 
 }
