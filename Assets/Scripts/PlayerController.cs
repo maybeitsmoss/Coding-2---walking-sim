@@ -2,6 +2,7 @@
 //using System.Runtime.CompilerServices;
 //using System.Threading.Tasks.Dataflow;
 //using Microsoft.CSharp.RuntimeBinder;
+using UnityEditor.Build;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private Transform feet;
 
+    private static bool movingForward;
+
     private CharacterController controller;
 
 
@@ -24,6 +27,18 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         feet = transform.Find("feet");
+    }
+
+    private void Start()
+    {
+        if(movingForward == true)
+        {
+            transform.position = new Vector3(0, 1, -23);
+        }
+        else
+        {
+            transform.position = new Vector3(0, 1, 6);
+        }
     }
 
     private void Update()
@@ -57,6 +72,12 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(velocity);
     }
+
+    /*public void SetMovingForward(bool moveForward)
+    {
+        movingForward = moveForward;
+    }*/
+
 
     /*private void Jump()
     {
