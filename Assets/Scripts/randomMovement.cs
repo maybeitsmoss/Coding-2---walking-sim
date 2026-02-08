@@ -4,17 +4,15 @@ public class randomMovement : MonoBehaviour
 {
     public float speed = 3f;
     public float rotateSpeed = 10f;
-    //private Vector3 previousPosition;
     Vector3 randomPos;
 
-//on start, pick a random direction
+    //on start, pick a random direction
     void Start()
     {
-        //previousPosition = transform.position;
         PickRandomPos();
     }
 
-//random position selector
+    //random position selector
     void PickRandomPos()
     {
         //get a random point within confines
@@ -23,8 +21,6 @@ public class randomMovement : MonoBehaviour
 
         //assign random position to randomPos variable
         randomPos = new Vector3(randomX, transform.position.y, randomZ);
-
-        //Debug.Log("Random Position: " + randomPos);
     }
 
     void Update()
@@ -39,23 +35,18 @@ public class randomMovement : MonoBehaviour
             PickRandomPos();
         }
 
+        //get the durection of movement....
         Vector3 moveDirection = randomPos - transform.position;
 
+        //....to get an angle of rotation.....
         Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
 
+        //....and rotate towards it
         transform.rotation = Quaternion.Euler(
             transform.eulerAngles.x,
+            //keeps Y axis correct (-180)
             targetRotation.eulerAngles.y - 180,
             transform.eulerAngles.z
         );
-
-        //Vector3 deltaPosition = transform.position - previousPosition;
-        //Quaternion targetRotation = Quaternion.LookRotation(deltaPosition.normalized);
-        //transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
-
-        //previousPosition = transform.position;
-        //Vector3 direction = randomPos - transform.position;
-        //Quaternion toRotation = Quaternion.LookRotation(direction);
-        //transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotateSpeed * Time.deltaTime);
     }
 }

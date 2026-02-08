@@ -10,22 +10,26 @@ public class sideToSideMovement : MonoBehaviour
     Vector3 maxLeft;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
+        //assign variables for the range of movement
         maxRight = new Vector3(transform.position.x - 1f, transform.position.y, transform.position.z);
         maxLeft = new Vector3(transform.position.x + 1f, transform.position.y, transform.position.z);
+        //send the fish in a direction to start
         goingRight = false;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        //when fish hits either end of its range..........
         if(transform.position.x <= maxRight.x)
         {
             goingRight = false;
             if(gameObject.tag != "whale")
             {
+                //flip sprite UNLESS it is the whale
                 GetComponent<SpriteRenderer>().flipX = true;
             }
             
@@ -33,14 +37,14 @@ public class sideToSideMovement : MonoBehaviour
         else if(transform.position.x >= maxLeft.x)
         {
             goingRight = true;
-            //Debug.Log("Going Right");
             if(gameObject.tag != "whale")
             {
+                //flip sprite UNLESS it is the whale
                 GetComponent<SpriteRenderer>().flipX = false;
             }
             
         }
-
+        //.........assign new direction to move in
         if(goingRight == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, maxRight, speed * Time.deltaTime);

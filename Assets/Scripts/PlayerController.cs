@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        //assign controller and feet components
         controller = GetComponent<CharacterController>();
         feet = transform.Find("feet");
     }
@@ -72,21 +73,4 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(velocity);
     }
-
-    /*public void SetMovingForward(bool moveForward)
-    {
-        movingForward = moveForward;
-    }*/
-
-
-    /*private void Jump()
-    {
-        rb = GetComponent<RigidBody>();
-        Vector3 velocity = rb.velocity;
-
-
-        velocity = Vector3(velocity.X, velocity.Y, jumpForce);
-    }*/
-
-
 }

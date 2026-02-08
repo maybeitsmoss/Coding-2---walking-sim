@@ -11,18 +11,20 @@ public class tankMovement : MonoBehaviour
 
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
+    {   
+        //assign variables for the range of movement
         maxUp = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         maxDown = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
+        //send the fish in a direction to start
         goingUp = true;
-        //UpAndDown();
+        
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        //when fish hits either end of its range..........
         if(transform.position.y >= maxUp.y)
         {
             goingUp = false;
@@ -31,7 +33,7 @@ public class tankMovement : MonoBehaviour
         {
             goingUp = true;
         }
-
+        //.........assign new direction to move in
         if(goingUp == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, maxUp, speed * Time.deltaTime);
