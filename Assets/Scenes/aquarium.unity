@@ -9460,7 +9460,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::waterToggle
   water: {fileID: 1683179274}
-  water1: {fileID: 1636544377}
 --- !u!65 &483588701
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15689,7 +15688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6113350470831195735, guid: f7fd5ea239cfa154b87a53e89dbb692f, type: 3}
       propertyPath: moveSpeed
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7617171042684676216, guid: f7fd5ea239cfa154b87a53e89dbb692f, type: 3}
       propertyPath: m_CastShadows
@@ -33545,7 +33544,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::waterToggle
   water: {fileID: 1683179274}
-  water1: {fileID: 1636544377}
 --- !u!65 &1797176125
 BoxCollider:
   m_ObjectHideFlags: 0
