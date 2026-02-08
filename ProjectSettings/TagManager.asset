@@ -6,6 +6,7 @@ TagManager:
   tags:
   - nextScene
   - lastScene
+  - whale
   layers:
   - Default
   - TransparentFX

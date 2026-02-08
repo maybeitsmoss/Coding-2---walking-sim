@@ -24,13 +24,21 @@ public class sideToSideMovement : MonoBehaviour
         if(transform.position.x <= maxRight.x)
         {
             goingRight = false;
-            GetComponent<SpriteRenderer>().flipX = true;
+            if(gameObject.tag != "whale")
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            
         }
         else if(transform.position.x >= maxLeft.x)
         {
             goingRight = true;
             //Debug.Log("Going Right");
-            GetComponent<SpriteRenderer>().flipX = false;
+            if(gameObject.tag != "whale")
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            
         }
 
         if(goingRight == true)
