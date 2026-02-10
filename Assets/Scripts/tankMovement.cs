@@ -11,10 +11,13 @@ public class tankMovement : MonoBehaviour
     Vector3 maxUp;
     Vector3 maxDown;
 
+    private Transform cam;
+
 
 
     void Start()
     {   
+        cam = Camera.main.transform;
         //assign variables for the range of movement
         maxUp = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         maxDown = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
@@ -45,5 +48,14 @@ public class tankMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, maxDown, speed * Time.deltaTime);
         }
 
+    }
+
+    void LateUpdate()
+    {
+        if(gameObject.tag != "sillyFish")
+        {
+            transform.LookAt(cam);    
+        }
+        
     }
 }

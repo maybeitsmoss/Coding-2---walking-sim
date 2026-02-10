@@ -6,6 +6,8 @@ public class waterToggle : MonoBehaviour
     public GameObject water;
     private Renderer waterRenderer;
 
+    private randomMovement randomMovementScript;
+
     //assigns renderer component at start
     void Start()
     {
@@ -21,6 +23,7 @@ public class waterToggle : MonoBehaviour
         {
             //...turn water off
             waterRenderer.enabled = false;
+            makeFreeRotation();
             
         }
         //if the water is invisible and player entered "on" box...
@@ -28,7 +31,26 @@ public class waterToggle : MonoBehaviour
         {
             //...turn water on
             waterRenderer.enabled = true;
+            stopFreeRotation();
             
+        }
+    }
+
+    public void makeFreeRotation()
+    {
+        randomMovement[] randomScript = FindObjectsOfType<randomMovement>();
+        foreach (randomMovement scriptInstance in randomScript)
+        {
+            scriptInstance.freeRotation = true;
+        }
+    }
+
+    public void stopFreeRotation()
+    {
+        randomMovement[] randomScript = FindObjectsOfType<randomMovement>();
+        foreach (randomMovement scriptInstance in randomScript)
+        {
+            scriptInstance.freeRotation = false;
         }
     }
 

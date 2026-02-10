@@ -11,6 +11,8 @@ TagManager:
   - off
   - mainAudio
   - plant
+  - catfish
+  - sillyFish
   layers:
   - Default
   - TransparentFX
