@@ -77,7 +77,7 @@ public class Audio : MonoBehaviour
             mixer.TransitionToSnapshots(snapshots, weights, fadeTime);
 
             //speed player up
-            playerController.moveSpeed = 3f;
+            playerController.moveSpeed = 4.5f;
 
             //stop audio after fade out
             StartCoroutine(StopAudio());

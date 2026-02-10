@@ -62,7 +62,7 @@ public class mainAudio : MonoBehaviour
             //increase time
             time += Time.deltaTime;
             //transition volume from current volume to 0.1
-            audio.volume = Mathf.Lerp(volume, 0.2f, time / FadeTimeIn);
+            audio.volume = Mathf.Lerp(volume, 0.1f, time / FadeTimeIn);
             yield return null;
         }
     }

@@ -8,18 +8,21 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/orange.unity
     guid: 888a559ea4add714483298d1b0e0d899
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/grey.unity
     guid: 492896ccb71b4a84a9ca4cada7052ec8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/red.unity
     guid: 3a5d76c71d248584d81d83dfcd3fa0d0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/yellow.unity
     guid: a0455aa547ce32743b157850e0dc6762
+  - enabled: 1
+    path: Assets/Scenes/aquarium.unity
+    guid: cde1a5a2a1130714e88b705a5dbb78f5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
