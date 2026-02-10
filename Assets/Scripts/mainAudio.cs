@@ -10,8 +10,11 @@ public class mainAudio : MonoBehaviour
     public float FadeTimeIn;
     public float FadeTimeOut;
 
+    private bool restartPrevention;
+
     private void Start()
     {
+        restartPrevention = false;
         //define audio component
         audio = GetComponent<AudioSource>();
     }
@@ -59,7 +62,7 @@ public class mainAudio : MonoBehaviour
             //increase time
             time += Time.deltaTime;
             //transition volume from current volume to 0.1
-            audio.volume = Mathf.Lerp(volume, 0.1f, time / FadeTimeIn);
+            audio.volume = Mathf.Lerp(volume, 0.2f, time / FadeTimeIn);
             yield return null;
         }
     }
@@ -68,13 +71,20 @@ public class mainAudio : MonoBehaviour
     //"SquishCoroutine"...makes plants dance
     public void StartDancingPlants()
     {
-        //array of all squashStretch scripts in the scene
-        squashStretch[] squashScript = FindObjectsOfType<squashStretch>();
-        //start coroutine on each script instance
-        foreach (squashStretch scriptInstance in squashScript)
+        if (restartPrevention == false)
         {
-            scriptInstance.StartCoroutine("SquishCoroutine");
-        } 
+            //array of all squashStretch scripts in the scene
+            squashStretch[] squashScript = FindObjectsOfType<squashStretch>();
+            //start coroutine on each script instance
+            foreach (squashStretch scriptInstance in squashScript)
+            {
+                scriptInstance.StartCoroutine("SquishCoroutine");
+            }
+
+            restartPrevention = true; 
+
+        }
+        
     }
 
     
