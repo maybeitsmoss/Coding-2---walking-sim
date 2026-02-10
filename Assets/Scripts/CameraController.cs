@@ -8,8 +8,10 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        //set rotation to zero
         xRotation = 0;
 
+        //lock and hide cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -22,24 +24,6 @@ public class CameraController : MonoBehaviour
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90, 90);
-
-        /*
-        if(xRotation < -90)
-        {
-            xRotation = -90;
-        }
-        if (xRotation > 90)
-        {
-            xRotation = 90;
-        }
-        */
-        
-        
-        
-        
-        
-
-
 
         //rotate
         transform.parent.Rotate(Vector3.up * mouseX);

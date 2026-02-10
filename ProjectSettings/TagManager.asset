@@ -10,6 +10,7 @@ TagManager:
   - on
   - off
   - mainAudio
+  - plant
   layers:
   - Default
   - TransparentFX

@@ -7,18 +7,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 6;
+    //player move speed (slow for good fish observation!)
+    public float moveSpeed = 3;
+    //gravity force
     public float gravity = 0.1f;
+    //ground check distance
     public float groundCheckRadius = 0.15f;
-    public float jumpForce = 15f;
+    //layer mask for ground check
     public LayerMask groundLayer;
 
+    //stores if grounded
     private bool isGrounded;
+    //velocity reference
     private Vector3 velocity;
+    //feet transform reference
     private Transform feet;
-
-    //private static bool movingForward;
-
+    //reference to character controller component
     private CharacterController controller;
 
 
@@ -30,18 +34,6 @@ public class PlayerController : MonoBehaviour
         feet = transform.Find("feet");
     }
 
-    private void Start()
-    {
-        /*if(movingForward == true)
-        {
-            transform.position = new Vector3(0, 1, -23);
-        }
-        else
-        {
-            transform.position = new Vector3(0, 1, 6);
-        }*/
-    }
-
     private void Update()
     {
         CheckisGrounded();
@@ -51,26 +43,25 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        //get input axis and apply based on move speed
         float x = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         float z = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-
+        //move player based on input + orientation
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move);
     }
 
     private void CheckisGrounded()
     {
+        //check for ground based on feet position, check radius + layer
         isGrounded = Physics.CheckSphere(feet.position, groundCheckRadius, groundLayer);
     }
 
     private void ApplyGravity()
     {
+        //move player downward based on gracity force
         velocity.y += gravity * Time.deltaTime;
-        /*if (isGrounded)
-        {
-            velocity = Vector3.zero;
-        }*/
-
+        //move the player
         controller.Move(velocity);
     }
 }

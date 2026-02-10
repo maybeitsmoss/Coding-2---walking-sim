@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class tankMovement : MonoBehaviour
 {
+    //fish speed
     public float speed = 0.5f;
-    //Vector3 position = transform.position;
+    //stores direction
     private bool goingUp;
 
+    //max/min movement confines
     Vector3 maxUp;
     Vector3 maxDown;
 

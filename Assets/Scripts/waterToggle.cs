@@ -2,14 +2,9 @@ using UnityEngine;
 
 public class waterToggle : MonoBehaviour
 {
+    //reference to game object and renderer
     public GameObject water;
     private Renderer waterRenderer;
-
-    //public GameObject Player;
-
-    //public GameObject water1;
-    //private Renderer water1Renderer;
-    
 
     //assigns renderer component at start
     void Start()
@@ -21,19 +16,22 @@ public class waterToggle : MonoBehaviour
     //when player enters trigger box...
     void OnTriggerEnter(Collider other)
     {
-        //if the water is visible, make it invisible
+        //if the water is visible and player entered "off" box...
         if(other.gameObject.CompareTag("Player") && waterRenderer.enabled == true && gameObject.tag == "off")
         {
-            
+            //...turn water off
             waterRenderer.enabled = false;
             
         }
-        //if the water is invisible, make it visible
+        //if the water is invisible and player entered "on" box...
         else if(other.gameObject.CompareTag("Player") && waterRenderer.enabled == false && gameObject.tag == "on")
         {
-            
+            //...turn water on
             waterRenderer.enabled = true;
             
         }
     }
+
+    //this is to hide the water at certain points in the level when it
+    //clips through lower areas of the level
 }

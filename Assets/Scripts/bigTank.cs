@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class bigTank : MonoBehaviour
 {
-
+    //speed of fish
     public float speed = 0.5f;
+    //determine direction facing
     private bool goingRight;
 
+    //define max/min transformation points
     Vector3 maxRight;
     Vector3 maxLeft;
     

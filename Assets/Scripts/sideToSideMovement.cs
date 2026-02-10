@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class sideToSideMovement : MonoBehaviour
 {
-
+    //speed of fish
     public float speed = 0.5f;
+    //stores direction
     private bool goingRight;
 
+    //max/min movement confines
     Vector3 maxRight;
     Vector3 maxLeft;
 

@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class randomMovement : MonoBehaviour
 {
+    //speed of fish
     public float speed = 3f;
-    public float rotateSpeed = 10f;
-    Vector3 randomPos;
+    //stores random position
+    private Vector3 randomPos;
 
-    //on start, pick a random direction
+    //on start, pick a random position
     void Start()
     {
         PickRandomPos();
