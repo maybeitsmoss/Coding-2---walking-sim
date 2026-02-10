@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private Transform feet;
 
-    private static bool movingForward;
+    //private static bool movingForward;
 
     private CharacterController controller;
 
@@ -32,14 +32,14 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if(movingForward == true)
+        /*if(movingForward == true)
         {
             transform.position = new Vector3(0, 1, -23);
         }
         else
         {
             transform.position = new Vector3(0, 1, 6);
-        }
+        }*/
     }
 
     private void Update()
@@ -65,11 +65,11 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyGravity()
     {
-        velocity += Vector3.down * gravity * Time.deltaTime;
-        if (isGrounded)
+        velocity.y += gravity * Time.deltaTime;
+        /*if (isGrounded)
         {
             velocity = Vector3.zero;
-        }
+        }*/
 
         controller.Move(velocity);
     }

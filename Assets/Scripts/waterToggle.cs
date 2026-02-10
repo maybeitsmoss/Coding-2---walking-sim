@@ -5,6 +5,8 @@ public class waterToggle : MonoBehaviour
     public GameObject water;
     private Renderer waterRenderer;
 
+    //public GameObject Player;
+
     //public GameObject water1;
     //private Renderer water1Renderer;
     
@@ -20,14 +22,14 @@ public class waterToggle : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //if the water is visible, make it invisible
-        if(other.gameObject.CompareTag("Player") && waterRenderer.enabled == true)
+        if(other.gameObject.CompareTag("Player") && waterRenderer.enabled == true && gameObject.tag == "off")
         {
             
             waterRenderer.enabled = false;
             
         }
         //if the water is invisible, make it visible
-        else if(other.gameObject.CompareTag("Player") && waterRenderer.enabled == false)
+        else if(other.gameObject.CompareTag("Player") && waterRenderer.enabled == false && gameObject.tag == "on")
         {
             
             waterRenderer.enabled = true;
