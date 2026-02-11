@@ -17653,6 +17653,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2844236933231747445, guid: 4744f7097ca3d214ca8ec480aad3324a, type: 3}
   m_PrefabInstance: {fileID: 933135342}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &658140390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5556224249361584685, guid: f7fd5ea239cfa154b87a53e89dbb692f, type: 3}
+  m_PrefabInstance: {fileID: 745155005}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &661303670
 GameObject:
   m_ObjectHideFlags: 0
@@ -19531,6 +19536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705037974}
   - component: {fileID: 705037973}
+  - component: {fileID: 705037975}
   m_Layer: 0
   m_Name: startingBarrier
   m_TagString: Untagged
@@ -19574,6 +19580,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &705037975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705037972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9448f5778dc8c214ab41102afe3f963c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  player: {fileID: 658140390}
 --- !u!1001 &706665601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30954,7 +30973,7 @@ MonoBehaviour:
   fadeTime: 2
   mainAudioScript: {fileID: 1285255394}
   playerController: {fileID: 1239589640}
-  slowSpeed: 2.5
+  slowSpeed: 3
 --- !u!82 &1140300961
 AudioSource:
   m_ObjectHideFlags: 0
@@ -31071,8 +31090,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3076775, y: 1, z: 2.0635245}
-  m_Center: {x: -0.1538389, y: 0, z: -0.5312532}
+  m_Size: {x: 1.3076775, y: 1, z: 1.9788891}
+  m_Center: {x: -0.1538389, y: 0, z: -0.48893535}
 --- !u!4 &1140300963
 Transform:
   m_ObjectHideFlags: 0
@@ -32940,7 +32959,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6113350470831195735, guid: f7fd5ea239cfa154b87a53e89dbb692f, type: 3}
   m_PrefabInstance: {fileID: 745155005}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 658140390}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 684c22dbe43ff0b4e9e3aa121ccc8d55, type: 3}
